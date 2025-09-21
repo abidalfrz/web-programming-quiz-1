@@ -1,6 +1,6 @@
 # Web Programming - Quiz 1
 
-👋 Hello!  
+Hello!  
 This repository contains my work for **Quiz 1** in the Web Programming course.  
 
 ## 📌 Description
