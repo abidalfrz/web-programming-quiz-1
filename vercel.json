@@ -1,5 +1,5 @@
 {
-  "rewrites": [
+  "routes": [
     { "src": "/quiz1", "dest": "/index.html" },
     { "src": "/quiz1/profile", "dest": "/profile.html" },
     { "src": "/quiz1/hometown", "dest": "/hometown.html" },
