@@ -4,144 +4,146 @@
   <meta charset="UTF-8">
   <title>Profile - My Personal Website</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <style rel ="stylesheet">
     .profile-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border: 5px solid #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: auto;
-  }
-  .profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  }
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 5px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: auto;
+    }
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
 
-  @keyframes fadeInUp {
-    from {
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    .typing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      border-right: 3px solid #ff9800;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-right: 5px;
+      animation: blink 0.8s step-end infinite;
     }
-  }
-
-  @keyframes slideDown {
-    from {
-      transform: translateY(-100%);
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #ff9800; }
     }
-    to {
-      transform: translateY(0);
+
+    .navbar {
+      background-color: #0d1b2a !important;
     }
-  }
-  
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-  }
-  .fade-in:nth-child(1) { animation-delay: 0.2s; }
-  .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .navbar-brand {
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #ffffff !important;
+    }
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #1f6feb !important; 
+    }
 
-  .highlight {
-    color: #ff9800;
-  }
+    .hero {
+      padding: 50px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0d1b2a, #1f6feb);
+      color: white;
+    }
 
-  .animate-title {
-    animation: fadeInUp 1.2s ease forwards;
-  }
-  .animate-subtitle {
-    opacity: 0.8;
-    animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 0.3s;
-  }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.5s ease forwards;
+    } 
+    .hero p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      animation: fadeInUp 1.5s ease forwards;
+      animation-delay: 0.3s;
+    }
 
-  .typing-text {
-    font-size: 2rem;
-    font-weight: bold;
-    border-right: 3px solid #ff9800;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-right: 5px;
-    animation: blink 0.8s step-end infinite;
-  }
-  @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: #ff9800; }
-  }
+    .section {
+      padding: 60px 0;
+    }
+    .section h2 {
+      color: #0d1b2a; 
+      margin-bottom: 30px;
+    }
+    .section p {
+      color: #444;
+      text-align: justify;
+    }
 
-  .navbar {
-    background-color: #0d1b2a !important;
-  }
-  .navbar-brand {
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #ffffff !important;
-  }
-  .navbar-nav .nav-link {
-    color: #ffffff !important;
-  }
-  .navbar-nav .nav-link:hover {
-    color: #1f6feb !important; 
-  }
+    .btn-custom {
+      margin: 5px;
+      background-color: #0d1b2a;
+      color: white;
+    }
 
-  .hero {
-    padding: 50px 0;
-    text-align: center;
-    background: linear-gradient(135deg, #0d1b2a, #1f6feb);
-    color: white;
-  }
+    .btn-custom:hover {
+      cursor: pointer;
+    }
 
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    /* background: linear-gradient(90deg, #00E5FF, #FFD700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    animation: fadeInUp 1.5s ease forwards;
-  } 
-  .hero p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 0.3s;
-  }
-  .section {
-    padding: 60px 0;
-  }
-  .section h2 {
-    color: #0d1b2a; 
-  }
-  .section p {
-    color: #444;
-  }
+    .contact-icons a {
+      font-size: 2rem;
+      margin: 0 15px;
+      color: #0d1b2a;
+      transition: color 0.3s;
+    }
+    .contact-icons a:hover {
+      color: #1f6feb;
+    }
 
-  .scroll-down {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 2rem;
-    color: #FFD700;
-    text-decoration: none;
-    animation: bounce 1.5s infinite;
-  }
-
-  .scroll-down:hover {
-    color: #00E5FF;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
+    .skill-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+    }
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .skill-icon {
+      width: 80px;
+      margin: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .skill-icon img {
+      width: 50px;
+      height: 50px;
+    }
+    .skill-icon:hover {
+      transform: scale(1.2);
+    }
+    .skill-icon p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
 
   </style>
 </head>
@@ -161,6 +163,7 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="profile-wrapper mb-4">
       <img src="assets/img/profile.jpg" alt="Profile Picture" class="profile-img">
@@ -169,21 +172,21 @@
     <h1 id="typing" class="typing-text"></h1>
     <p class="mt-3">AI & ML Enthusiast | Lifelong Learner</p>
 
-    <a href="#about" class="btn btn-warning mt-3">
-      About Me
-    </a>
+    <a href="#about" class="btn btn-custom">About Me</a>
+    <a href="#skills" class="btn btn-custom">Skills</a>
+    <a href="#contact" class="btn btn-custom">Contact</a>
   </section>
 
   <script src="assets/script.js"></script>
 
-  
+  <!-- About -->
   <section class="section container text-center">
     <div class="row justify-content-center">
       <div class="col-md-8 fade-in">
         <h2 id="about">About Me</h2>
         <p>
           Hello 👋, my name is <strong>Abid</strong>.  
-          I am 19 years old and currently a student at Institut Teknologi Sepuluh Nopember and it's been 2 years i am studying here majoring in Informatics Engineering.
+          I am 19 years old and currently a student at Institut Teknologi Sepuluh Nopember and it's been 1 years I am studying here majoring in Informatics Engineering.
           I have a passion for technology, especially in the fields of Artificial Intelligence and Machine Learning.
           In my free time, I enjoy reading tech blogs, build small projects, and join competitions related to data science and AI.
         </p>
@@ -191,10 +194,98 @@
     </div>
   </section>
 
+  <!-- Skills -->
+  <!-- Skills Section -->
+<section id="skills" class="section container text-center">
+  <h2 class="mb-5">My Skills</h2>
+  <div class="row">
 
-  <!-- <footer>
-    <p>&copy; bidalfrz</p>
-  </footer> -->
+    <!-- Programming Skills -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow skill-card">
+        <div class="card-body">
+          <h4 class="mb-3">Programming</h4>
+          <div class="d-flex flex-wrap justify-content-center">
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+              <p>Python</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+              <p>MySQL</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+              <p>C++</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Machine Learning -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow skill-card">
+        <div class="card-body">
+          <h4 class="mb-3">Machine Learning</h4>
+          <div class="d-flex flex-wrap justify-content-center">
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+              <p>TensorFlow</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo-notext.png" alt="Scikit-Learn">
+              <p>Scikit-Learn</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+              <p>NumPy</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+              <p>Pandas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools & Frameworks -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow skill-card">
+        <div class="card-body">
+          <h4 class="mb-3">Tools & Frameworks</h4>
+          <div class="d-flex flex-wrap justify-content-center">
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+              <p>Git</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+              <p>Docker</p>
+            </div>
+            <div class="skill-icon">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+              <p>Linux</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <section class="section container text-center">
+    <h2 id="contact">Contact</h2>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:your-email@example.com"><i class="bi bi-envelope-fill"></i></a>
+      <a href="https://github.com/your-github" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+  </section>
 
 </body>
 </html>

@@ -16,6 +16,25 @@
       color: #1f6feb !important; 
     }
 
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+
     .hero {
     padding: 50px auto;
     position: relative;
@@ -74,7 +93,23 @@
     }
     .section p {
       color: #444;
+      text-align: justify;
     }
+
+    /* .typing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      border-right: 3px solid #ff9800;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-right: 5px;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #ff9800; }
+    } */
 
   </style>
 </head>
@@ -101,23 +136,50 @@
     <img src="assets/img/hometown3.jpg" alt="Hometown 3">
   </div>
   <div class="hero-text">
-    <h1>KEDIRI CITY</h1>
+    <h1 id="typing-ht"></h1>
   </div>
 </section>
+
+<!-- <script src="assets/script.js"></script> -->
 
 <section class="section container text-center">
 <div class="row justify-content-center">
     <div class="col-md-8 fade-in">
-    <h2 id="hometown">Description</h2>
-    <p>
-        Imagine a city where the echoes of an ancient kingdom resonate alongside the hum of a modern industrial giant. Welcome to Kediri, a captivating city nestled in the fertile Brantas River valley of East Java, under the watchful gaze of the mighty Mount Kelud volcano. Kediri is not just a place on a map; it's a journey through time, a city of compelling contrasts.
-    </p>
-    <p>
-      Kediri's identity is inextricably linked to a different kind of empire: Gudang Garam. As the headquarters of one of the world's largest kretek (clove cigarette) manufacturers, the city's rhythm is often set by the factory. The sweet, spicy aroma of cloves and tobacco often wafts through the air, a constant reminder of the industry that has shaped the city's economy and provided livelihoods for generations. It’s a modern powerhouse with deep, traditional roots.
-    </p>
+      <h2 id="hometown">Description</h2>
+      <p>
+          Imagine a city where the echoes of an ancient kingdom resonate alongside the hum of a modern industrial giant. 
+          Welcome to Kediri, a captivating city nestled in the fertile Brantas River valley of East Java, under the watchful gaze of the mighty Mount Kelud volcano. 
+          Kediri is not just a place on a map, it's a journey through time, a city of compelling contrasts.
+      </p>
+      <p>
+        Kediri's identity is inextricably linked to a different kind of empire: Gudang Garam. 
+        As the headquarters of one of the world's largest kretek (clove cigarette) manufacturers, the city's rhythm is often set by the factory. 
+        The sweet, spicy aroma of cloves and tobacco often wafts through the air, a constant reminder of the industry that has shaped the city's economy and provided livelihoods for generations. 
+        It’s a modern powerhouse with deep, traditional roots.
+      </p>
     </div>
 </div>
 </section>
+
+<script>
+  const text = "KEDIRI CITY";
+  let i = 0;
+
+  function typeEffect() {
+      if (i < text.length) {
+      document.getElementById("typing-ht").textContent += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 120); 
+      }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+      typeEffect();
+  });
+
+
+
+</script>
 
 
 </body>

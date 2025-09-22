@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tourist Places - My Personal Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .navbar {
+      background-color: #0d1b2a !important;
+    }
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #1f6feb !important; 
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+      background: linear-gradient(135deg, #0d1b2a, #1f6feb);
+    }
+    .hero-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 100%;
+      width: 100%;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .hero-text {
+      position: absolute;
+      text-align: center;
+      color: white;
+    }
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #00E5FF, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+
+    .section {
+      padding: 60px 0;
+    }
+    .section h2 {
+      color: #0d1b2a;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .btn-custom {
+      background-color: #0d1b2a;
+      color: white;
+    }
+    .btn-custom:hover {
+      cursor: pointer;
+    }
+
+    .card{
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .map-container {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .map-container iframe {
+      border-radius: 10px;
+      width: 100%;
+      height: 400px;
+    }
+
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
+    .map-responsive iframe {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="main.html">Home</a>
+      <div>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="hometown.html">Hometown</a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html">Local Food</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tourist.html">Tourist Places</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-images">
+        <img src="assets/img/hometown1.jpg" alt="Hometown 1">
+        <img src="assets/img/hometown2.jpg" alt="Hometown 2">
+        <img src="assets/img/hometown3.jpg" alt="Hometown 3">
+    </div>
+    <div class="hero-text">
+      <h1 id="typing-tourist"></h1>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Top Tourist Places in Kediri</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/tourist/kelud/main.jpg" class="card-img-top" alt="Gunung Kelud">
+          <div class="card-body text-center">
+            <h5 class="card-title">Gunung Kelud</h5>
+            <button class="btn btn-custom btn-sm" data-bs-toggle="modal" data-bs-target="#modalKelud">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/tourist/slg/main.jpg" class="card-img-top" alt="Simpang Lima Gumul">
+          <div class="card-body text-center">
+            <h5 class="card-title">Simpang Lima Gumul</h5>
+            <button class="btn btn-custom btn-sm" data-bs-toggle="modal" data-bs-target="#modalSLG">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/tourist/selomangleng/main.jpg" class="card-img-top" alt="Goa Selomangleng">
+          <div class="card-body text-center">
+            <h5 class="card-title">Goa Selomangleng</h5>
+            <button class="btn btn-custom btn-sm" data-bs-toggle="modal" data-bs-target="#modalGoa">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/tourist/dolo/main.jpg" class="card-img-top" alt="Air Terjun Dolo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Air Terjun Dolo</h5>
+            <button class="btn btn-custom btn-sm" data-bs-toggle="modal" data-bs-target="#modalDolo">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="modalKelud" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Gunung Kelud</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselKelud" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="assets/img/tourist/kelud/kelud1.jpg" class="d-block w-100"></div>
+              <div class="carousel-item"><img src="assets/img/tourist/kelud/kelud2.jpg" class="d-block w-100"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselKelud" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselKelud" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <p><b>Gunung Kelud is both a majestic and formidable active volcano that stands as the iconic natural landmark of the Kediri region. More than just a mountain, it is a powerful testament to the raw forces of nature, offering a tourist experience that has been dramatically shaped by its history of powerful eruptions, most notably the transformative event of 2014. </b></p>
+          <ul>
+            <li><b>Location:</b> Ringinrejo, Karangrejo, Kec. Garum, Kabupaten Blitar, Jawa Timur</li>
+            <li><b>Ticket:</b> Rp10.000-Rp40.000</li>
+            <li><b>Open:</b> 08.00–16.30</li>
+          </ul>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31612.93995971425!2d112.2932891824676!3d-7.93495683850406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788bf4425ac5e3%3A0xfdacc6dbc315617d!2sGn.%20Kelud!5e0!3m2!1sid!2sid!4v1758528134861!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="modal fade" id="modalSLG" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Simpang Lima Gumul</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselSLG" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="assets/img/tourist/slg/slg1.jpg" class="d-block w-100"></div>
+              <div class="carousel-item"><img src="assets/img/tourist/slg/slg2.jpg" class="d-block w-100"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSLG" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSLG" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <p><b>Simpang Lima Gumul is the grand and unmistakable modern icon of the Kediri Regency, a magnificent structure often dubbed the "Arc de Triomphe of Java" for its striking resemblance to the famous Parisian landmark. Standing proudly at the center of a bustling five-way roundabout, this massive arch serves as a monumental gateway connecting the major districts of the regency. While its architectural inspiration is global, its soul is deeply rooted in local history, built to symbolize the vision of the ancient King Jayabaya to unite the five surrounding regions. More than just a replica, its walls are adorned with intricate reliefs depicting the rich history, culture, and agricultural prosperity of Kediri.</b></p>
+          <ul>
+            <li><b>Location:</b> Jl. Raya Kediri - Plosoklaten, Tugurejo, Kec. Ngasem, Kabupaten Kediri, Jawa Timur</li>
+            <li><b>Ticket:</b> Rp25.000–Rp30.000</li>
+            <li><b>Open:</b> 08.00–17.00</li>
+          </ul>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7538268503536!2d112.05974087384479!3d-7.815862077609547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78595b9cb74d8f%3A0x46b826cce5637982!2sTugu%20Simpang%205%20Gumul%20Kab.%20Kediri!5e0!3m2!1sid!2sid!4v1758528108222!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="modal fade" id="modalGoa" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Goa Selomangleng</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselGoa" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="assets/img/tourist/selomangleng/gs1.jpg" class="d-block w-100"></div>
+              <div class="carousel-item"><img src="assets/img/tourist/selomangleng/gs2.jpg" class="d-block w-100"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGoa" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGoa" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <p><b>Goa Selomangleng is a place where history, legend, and spirituality converge, making it one of Kediri's most mystical and revered historical sites. Carved by human hands from a massive andesite boulder nestled at the foot of Mount Klotok, this is not a natural cavern but an ancient hermitage cave. Its fame is inextricably linked to the captivating legend of Dewi Kilisuci, a crown princess of the Kahuripan Kingdom who is said to have renounced her royal life and worldly possessions to pursue asceticism and deep meditation within these very walls.</b></p>
+          <ul>
+            <li><b>Location:</b> Pojok, Kec. Mojoroto, Kabupaten Kediri, Jawa Timur</li>
+            <li><b>Ticket:</b> Rp3.000-Rp4.000</li>
+            <li><b>Open:</b> 07.00–17.00</li>
+          </ul>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8359776869784!2d111.97009697384465!3d-7.807182177507539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78574d344faef9%3A0x988808d5f93a7aef!2sGoa%20Selomangleng!5e0!3m2!1sid!2sid!4v1758528088836!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>    
+
+   <div class="modal fade" id="modalDolo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Air Terjun Dolo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+
+          <div id="carouselDolo" class="carousel slide mb-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="assets/img/tourist/dolo/dolo1.jpg" class="d-block w-100"></div>
+              <div class="carousel-item"><img src="assets/img/tourist/dolo/dolo2.jpg" class="d-block w-100"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDolo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDolo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <p><b>Air Terjun Dolo is a breathtaking natural escape tucked away high on the cool, pine-clad slopes of Mount Wilis. This majestic waterfall is not a single, sheer drop, but a series of stunning cascades that tumble down a rugged rock face from a total height of around 125 meters. Situated at an altitude of over 1,200 meters above sea level, a visit here offers a wonderful respite from the lowland heat, immersing you in crisp mountain air and the serene ambiance of the surrounding forest. Reaching the waterfall is part of the adventure, involving a scenic trek down a long flight of stone steps that builds anticipation for the rewarding sight and sound of the gushing water.</b></p>
+          <ul>
+            <li><b>Location:</b> Dusun Besuki, Desa Jugo, Kecamatan Mojo, Hutan, Blimbing, Kediri, Kabupaten Kediri, Jawa Timur</li>
+            <li><b>Ticket:</b> Rp5.000</li>
+            <li><b>Open:</b> 08.00–17.00</li>
+          </ul>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.2358638270243!2d111.83275687384575!3d-7.870369978252967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785719e4403d47%3A0x759179e2a1ba4f4a!2sAir%20Terjun%20Dolo!5e0!3m2!1sid!2sid!4v1758527999778!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    const text = "EXPLORE KEDIRI";
+    let i = 0;
+    function typeEffect() {
+        if (i < text.length) {
+        document.getElementById("typing-tourist").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 120); 
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        typeEffect();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
