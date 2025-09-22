@@ -1,9 +1,9 @@
 {
-  "routes": [
-    { "source": "/quiz1", "destination": "/index.html" },
-    { "source": "/quiz1/profile", "destination": "/profile.html" },
-    { "source": "/quiz1/hometown", "destination": "/hometown.html" },
-    { "source": "/quiz1/food", "destination": "/food.html" },
-    { "source": "/quiz1/tourist", "destination": "/tourist.html" }
+  "rewrites": [
+    { "src": "/quiz1", "dest": "/index.html" },
+    { "src": "/quiz1/profile", "dest": "/profile.html" },
+    { "src": "/quiz1/hometown", "dest": "/hometown.html" },
+    { "src": "/quiz1/food", "dest": "/food.html" },
+    { "src": "/quiz1/tourist", "dest": "/tourist.html" }
   ]
 }
