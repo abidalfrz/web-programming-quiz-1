@@ -65,7 +65,7 @@
       padding: 10px 20px;
       border-radius: 8px;
     }
-    
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -104,7 +104,6 @@
   </style>
 </head>
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html">Home</a>
@@ -120,55 +119,52 @@
   </nav>
 
   <section class="hero">
-  <div class="hero-images">
-    <img src="assets/img/hometown1.jpg" alt="Hometown 1">
-    <img src="assets/img/hometown2.jpg" alt="Hometown 2">
-    <img src="assets/img/hometown3.jpg" alt="Hometown 3">
-  </div>
-  <div class="hero-text">
-    <h1 id="typing-ht"></h1>
-  </div>
-</section>
-
-<!-- <script src="assets/script.js"></script> -->
-
-<section class="section container text-center">
-<div class="row justify-content-center">
-    <div class="col-md-8 fade-in">
-      <h2 id="hometown">Description</h2>
-      <p>
-          So, my hometown is Kediri, a city where the echoes of an ancient kingdom resonate alongside the hum of a modern industrial giant. 
-          Welcome to Kediri, a captivating city nestled in the fertile Brantas River valley of East Java, under the watchful gaze of the mighty Mount Kelud volcano. 
-          Kediri is not just a place on a map, it's a journey through time, a city of compelling contrasts.
-      </p>
-      <p>
-        Kediri's identity is inextricably linked to a different kind of empire: Gudang Garam. 
-        As the headquarters of one of the world's largest kretek (clove cigarette) manufacturers, the city's rhythm is often set by the factory. 
-        The sweet, spicy aroma of cloves and tobacco often wafts through the air, a constant reminder of the industry that has shaped the city's economy and provided livelihoods for generations. 
-        It’s a modern powerhouse with deep, traditional roots.
-      </p>
+    <div class="hero-images">
+      <img src="assets/img/hometown1.jpg" alt="Hometown 1">
+      <img src="assets/img/hometown2.jpg" alt="Hometown 2">
+      <img src="assets/img/hometown3.jpg" alt="Hometown 3">
     </div>
-</div>
-</section>
+    <div class="hero-text">
+      <h1 id="typing-ht"></h1>
+    </div>
+  </section>
 
-<script>
-  const text = "KEDIRI CITY";
-  let i = 0;
+  <section class="section container text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8 fade-in">
+          <h2 id="hometown">Description</h2>
+          <p>
+              So, my hometown is Kediri, a city where the echoes of an ancient kingdom resonate alongside the hum of a modern industrial giant. 
+              Welcome to Kediri, a captivating city nestled in the fertile Brantas River valley of East Java, under the watchful gaze of the mighty Mount Kelud volcano. 
+              Kediri is not just a place on a map, it's a journey through time, a city of compelling contrasts.
+          </p>
+          <p>
+            Kediri's identity is inextricably linked to a different kind of empire: Gudang Garam. 
+            As the headquarters of one of the world's largest kretek (clove cigarette) manufacturers, the city's rhythm is often set by the factory. 
+            The sweet, spicy aroma of cloves and tobacco often wafts through the air, a constant reminder of the industry that has shaped the city's economy and provided livelihoods for generations. 
+            It’s a modern powerhouse with deep, traditional roots.
+          </p>
+        </div>
+    </div>
+  </section>
 
-  function typeEffect() {
-      if (i < text.length) {
-      document.getElementById("typing-ht").textContent += text.charAt(i);
-      i++;
-      setTimeout(typeEffect, 120); 
-      }
-  }
+  <script>
+    const text = "KEDIRI CITY";
+    let i = 0;
 
-  document.addEventListener("DOMContentLoaded", function() {
-      typeEffect();
-  });
+    function typeEffect() {
+        if (i < text.length) {
+        document.getElementById("typing-ht").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 120); 
+        }
+    }
 
-</script>
+    document.addEventListener("DOMContentLoaded", function() {
+        typeEffect();
+    });
 
+  </script>
 
 </body>
 </html>
