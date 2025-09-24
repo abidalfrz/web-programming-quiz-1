@@ -183,18 +183,19 @@
 
   <script>
     const text = "Hi, I'm Muhammad Abid Baihaqi Al Faridzi"; 
-    const typingElement = document.getElementById("typing");
     let i = 0;
 
     function typeEffect() {
         if (i < text.length) {
-        typingElement.textContent += text.charAt(i);
+        document.getElementById("typing").textContent += text.charAt(i);
         i++;
         setTimeout(typeEffect, 120); 
         }
     }
 
-    typeEffect();
+    document.addEventListener("DOMContentLoaded", function() {
+        typeEffect();
+    });
   </script>
 
   <section class="section container text-center">
